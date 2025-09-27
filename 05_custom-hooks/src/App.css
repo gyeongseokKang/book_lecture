@@ -1,0 +1,362 @@
+/* 기존 스타일들 */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Custom Hooks Demo 스타일들 */
+
+/* App 컨테이너 */
+.app-container {
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* 헤더 */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+.app-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* 데모 카드 공통 */
+.demo-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.demo-header {
+  margin-bottom: 1.5rem;
+}
+
+.demo-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demo-description {
+  color: #718096;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Audio Controls */
+.audio-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.audio-btn {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 80px;
+}
+
+.audio-btn-play {
+  background: #4299e1;
+  color: white;
+}
+
+.audio-btn-play:disabled {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.audio-btn-pause {
+  background: #e53e3e;
+  color: white;
+}
+
+.audio-btn-pause:disabled {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.audio-btn-seek {
+  background: #9f7aea;
+  color: white;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-bottom: 1rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.progress-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.progress-status-playing {
+  background: #48bb78;
+  color: white;
+}
+
+.progress-status-paused {
+  background: #cbd5e0;
+  color: #4a5568;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Volume Controls */
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.volume-btn {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.volume-btn-muted {
+  background: #e53e3e;
+}
+
+.volume-btn-unmuted {
+  background: #4299e1;
+}
+
+.volume-slider-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.volume-label {
+  font-size: 0.8rem;
+  color: #4a5568;
+}
+
+.volume-label-min {
+  min-width: 20px;
+}
+
+.volume-label-max {
+  min-width: 35px;
+}
+
+.volume-slider {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #e2e8f0;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Window Size Demo */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.size-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.size-card-width {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+}
+
+.size-card-height {
+  background: linear-gradient(135deg, #9f7aea, #805ad5);
+}
+
+.size-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.size-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.size-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Device Type Display */
+.device-display {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.device-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.device-description {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Breakpoint Guide */
+.breakpoint-guide {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.breakpoint-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin: 0 0 0.75rem 0;
+}
+
+.breakpoint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.breakpoint-item {
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.breakpoint-mobile {
+  background: #e53e3e;
+  color: white;
+  font-weight: bold;
+}
+
+.breakpoint-tablet {
+  background: #dd6b20;
+  color: white;
+  font-weight: bold;
+}
+
+.breakpoint-desktop {
+  background: #38a169;
+  color: white;
+  font-weight: bold;
+}
+
+.breakpoint-inactive {
+  background: #e2e8f0;
+  color: #4a5568;
+  font-weight: normal;
+}
