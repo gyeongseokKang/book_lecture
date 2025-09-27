@@ -15,7 +15,7 @@ const RATE_LIMIT = {
 };
 
 export async function middleware(request: NextRequest) {
-  console.log("[middleware]", request.nextUrl.pathname);
+  // console.log("[middleware]", request.nextUrl.pathname);
 
   const pathnameWithoutLocale = await getPathnameWithoutLocale(
     request.nextUrl.pathname
@@ -23,19 +23,19 @@ export async function middleware(request: NextRequest) {
 
   // 브라우저별 리다이렉트
   const userAgent = request.headers.get("user-agent") || "";
-  console.log("[userAgent]", userAgent);
+  // console.log("[userAgent]", userAgent);
 
-  const isChrome =
-    /Chrome/i.test(userAgent) && !/Edge|Edg|OPR|Opera/i.test(userAgent);
-  const isSafari = /Safari/i.test(userAgent) && !/Chrome/i.test(userAgent);
+  // const isChrome =
+  //   /Chrome/i.test(userAgent) && !/Edge|Edg|OPR|Opera/i.test(userAgent);
+  // const isSafari = /Safari/i.test(userAgent) && !/Chrome/i.test(userAgent);
 
-  if (isChrome && pathnameWithoutLocale === "/") {
-    return NextResponse.redirect(new URL("/chrome", request.url));
-  }
+  // if (isChrome && pathnameWithoutLocale === "/") {
+  //   return NextResponse.redirect(new URL("/chrome", request.url));
+  // }
 
-  if (isSafari && pathnameWithoutLocale === "/") {
-    return NextResponse.redirect(new URL("/safari", request.url));
-  }
+  // if (isSafari && pathnameWithoutLocale === "/") {
+  //   return NextResponse.redirect(new URL("/safari", request.url));
+  // }
 
   const cookieStore = await cookies();
   const authUser = cookieStore.get("auth-user");
