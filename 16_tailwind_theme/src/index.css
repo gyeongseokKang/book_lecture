@@ -2,7 +2,64 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 강제 생성 클레스 */
+@source inline("{hover:,}bg-red-{50,{100..900..100},950}");
+
 .dark {
   color: #ffffff;
   background-color: #000000;
+}
+
+@theme {
+
+  /* 스타일 덮어쓰기 */
+  --text-4xl: 10rem;
+
+  /* 새로운 색상 추가 */
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+
+  --color-brand-100: oklch(0.99 0 0);
+  --color-brand-200: oklch(0.98 0.04 113.22);
+  --color-brand-300: oklch(0.94 0.11 115.03);
+  --color-brand-400: oklch(0.92 0.19 114.08);
+  --color-brand-500: oklch(0.84 0.18 117.33);
+  --color-brand-600: oklch(0.53 0.12 118.34);
+
+
+  /* 애니메이션 추가 */
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+
+  @keyframes wiggle {
+
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+}
+
+/* 기본 스타일 확장 */
+@layer base {
+  a {
+    color: var(--color-brand-600);
+    text-decoration-line: underline;
+  }
+}
+
+/* 유틸리티 확장 */
+.center {
+  @apply flex justify-center items-center;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-lg dark:shadow-gray-900/25 transition-colors duration-200;
 }
